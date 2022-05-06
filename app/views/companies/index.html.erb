@@ -9,3 +9,28 @@
     <li><%=company["name"]%></li>
     <%end%>
 </ul>
+
+<!--manual table-->
+<table>
+<tr>
+    <th>Name</th> <!--"h" is for header row-->
+    <th>City</th>
+    <th>State</th>
+</tr>
+<tr>
+    <td>Amazon</td> <!--"d" is for data-->
+    <td>Seattle</td>
+    <td>WA</td>
+</tr>
+</table>
+
+<!--dynamic table-->
+<%for company in companies%>
+<table>
+<tr>
+    <td> <%=company["name"]%></td>
+    <td> <%=company["city"]%></td>
+    <td><%=company["state"]%></td> 
+</tr>
+<%end%>
+</table>
