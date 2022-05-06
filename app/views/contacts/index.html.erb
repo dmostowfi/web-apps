@@ -1,0 +1,29 @@
+<%
+    homies = Contact.all
+%>
+
+<h1>The Homies</h1>
+
+<!--but this isn't working for some reason-->
+<ul>
+<% for homie in homies %>
+    <li>
+    <%=homie["first_name"]%>
+    <%=homie["last_name"]%>
+    </li>
+<%end%>
+</ul>
+
+<!--but this isn't working for some reason-->
+<ul>
+<% for homie in homies %>
+    <% company = Company.find_by({"id"=>homie["company_id"]})%>
+    <li>
+        <%=homie["first_name"]%>
+        <%=homie["last_name"]%>
+        - <%=company["name"]%>
+    </li>
+<%end%>
+</ul>
+
+
