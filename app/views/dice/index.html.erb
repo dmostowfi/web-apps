@@ -11,3 +11,17 @@ Die 2 is <%= die2%>
 The total is <%=total%>
 <a href="/dice">Roll Again</a> <!--you're pointing the page back to itself -->
 </p>
+
+<!--this adds a static image-->
+<p>
+    This doesn't match the dice numbers
+    <img src="/images/dice/5.svg">
+    <img src="/images/dice/5.svg">
+</p>
+
+<!--but we can make it dynamic -->
+<p>
+    This does match the dice numbers
+    <img src="/images/dice/<%=die1%>.svg">
+    <img src="/images/dice/<%=die2%>.svg">
+</p>
