@@ -1,0 +1,51 @@
+<h1>Casino!</h1>
+
+<!--first is the ruby part-->
+<%
+  ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace"]
+  suits = ["clubs", "diamonds", "hearts", "spades"]
+
+  deck = []
+  for rank in ranks
+    for suit in suits
+      deck="#{rank.downcase}_of_#{suit.downcase}" #makes it lowercase
+    end
+  end
+
+  shuffled_deck = deck.shuffle
+  hand = shuffled_deck[0,5]
+%>
+<!--then we add it to the webpage (no images)-->
+<p>
+  <% for card in hand%>
+    <%=card%>
+  <% end %>
+</p>
+
+<!--then we add the images-->
+<p>
+  <% for card in hand %>
+    <img src="/images/cards/<%= card %>.svg">
+  <% end %>
+</p>
+
+<p>
+  <a href="/cards">Deal Again!</a>
+</p>
+
+<!--my wrong approach
+<%
+    ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
+    suits = ["Clubs", "Diamonds", "Hearts", "Spades"]
+%>
+
+<% for rank in ranks
+    <%=rank%>
+<%end%>
+
+<p>
+<% for rank in ranks
+    for suit in suits%>
+    <%=rank%> of <%=suits%>
+<%end%>
+</p> -->
