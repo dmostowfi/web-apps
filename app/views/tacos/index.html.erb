@@ -2,7 +2,20 @@
 
 <%=6+6 %> <!-- this outputs ruby code to the screen. so you will see it on the page --> 
 
+<!-- making a LOOP --> 
 
+<%
+    fillings = ["Carnitas", "Al Pastor", "Carne Asada"] #we can use this variable in our html
+%>
+
+<ul> <!-- this is html --> 
+<%for filling in fillings%> <!-- you embed the loop in the ruby % things --> 
+    <li><%= filling%></li>  <!-- then embed the filling variable in the html list index (li) --> 
+    <%end%>
+</ul> <!-- then close it with html --> 
+
+
+<!-- this is the manual version of the above --> 
 <h1>Tacos!!</h1> <!-- all the !DOC stuff is actually in layouts so you don't need it here -->
 <ul>
 <li> carnitas
